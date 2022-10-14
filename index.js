@@ -64,3 +64,61 @@ const managerPrompt = () => {
     }
  ]);
 };
+
+const promptEngineer = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Name of team Engineer? (Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please add name of engineer.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Enter engineers employee ID? (Required)',
+            validate: idInput => {
+                if (idInput) {
+                    return true;
+                } else {
+                    console.log('Enter employee Id for engineer.');
+                    return false;
+                }
+            }
+         },
+         {
+            type: 'input',
+            name: 'email',
+            message: 'Enter engineers email address. (Required)',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter engineers email address');
+                    return false;
+                }
+            }
+         },
+         {
+            type: 'input',
+            name: 'github',
+            message: 'Enter engineers Github username. (Required)',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Please enter engineers Github username.');
+                    return false;
+                }
+            }
+         }
+
+    ]);
+};
