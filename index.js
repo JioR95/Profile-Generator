@@ -122,3 +122,61 @@ const promptEngineer = () => {
 
     ]);
 };
+
+const promptIntern = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Enter Interns name.(Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter Interns name.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Enter Interns employee ID. (Required)',
+            validate: idInput => {
+                if (idInput) {
+                    return true;
+                } else {
+                    console.log('Please enter Interns employee ID');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter Interns email address. (Required)',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter Interns email address.');
+                }
+
+            }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'Name of school intern attends. (Required)',
+            validate: schoolInput => {
+                if (schoolInput) {
+                    return true;
+                } else {
+                    console.log('Enter name of interns school.');
+                    return false;
+                }
+            }
+
+        }
+    ]);
+};
