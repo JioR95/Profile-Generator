@@ -5,6 +5,7 @@ const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 const path = require('path')
 const fs = require('fs')
+const writeFile = require('./utils/write-file');
 
 const staffTeam = [];
 
