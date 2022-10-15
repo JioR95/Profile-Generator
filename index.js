@@ -180,3 +180,39 @@ const promptIntern = () => {
         }
     ]);
 };
+
+const promptNextStep = () => {
+    return inquirer.prompt([
+        {
+            type: 'list',
+            name: 'next',
+            message: 'What else would you like to do next?',
+            choices: ['Add a Intern', 'Add a Engineer', 'All Done.'],
+        }
+    ]);
+};
+async function addTeam() {
+    let isFinished = false;
+    let manger = await managerPrompt();
+    let newManger = new Manager(manager.name, manager.id, manager.email, manager.office);
+    staffTeam.push(newManger);
+
+    while(!isFinished) {
+        let next = await promptNextStep();
+        if(next.next === 'Add a Engineer') {
+            let engineer = await promptEngineer();
+            let newEngineer = new Engineer(engineer.name,engineer.id, engineer.email,engineer.github);
+            staffTeam.push(newEngineer);
+        } else if (next.next === 'Add a Intern') {
+            let intern = await promptIntern();
+            let newIntern = new Intern(intern.name, intern.id, intern.email, intern.school);
+            staffTeam.push(newIntern);
+        } else {
+            isFinished = true;
+        }
+    }
+    let pageContent = await generateHtml(staffTeam);
+    writeFile (pageContent);
+}
+
+staffTeam();
