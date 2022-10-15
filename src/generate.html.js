@@ -65,6 +65,11 @@ generateHTML = (data) => {
         if (role === 'Engineer'){
             const engineerCard = createEngineer(employee);
 
+            staffArray.push(engineerCard);
+        }
+        if (role === 'Intern') {
+            const internCard = createIntern(employee);
+
             staffArray.push(internCard);
         }
     }

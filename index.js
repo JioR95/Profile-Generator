@@ -194,9 +194,9 @@ const promptNextStep = () => {
 };
 async function addTeam() {
     let isFinished = false;
-    let manger = await managerPrompt();
-    let newManger = new Manager(manager.name, manager.id, manager.email, manager.office);
-    staffTeam.push(newManger);
+    let manager = await managerPrompt();
+    let newManager = new Manager(manager.name, manager.id, manager.email, manager.office);
+    staffTeam.push(newManager);
 
     while(!isFinished) {
         let next = await promptNextStep();
@@ -216,4 +216,4 @@ async function addTeam() {
     writeFile (pageContent);
 }
 
-staffTeam();
+addTeam();
