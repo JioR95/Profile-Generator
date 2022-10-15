@@ -7,7 +7,7 @@ const createManager = function (manager) {
       </div>
       <div class= "card-body">
       <p class= "id">ID: ${manager.id} </p>
-      <p class= "email>Email: <a href= "mailto:${manager.email}">${manager.email} </a> </p>
+      <p class= "email">Email: <a href= "mailto:${manager.email}">${manager.email} </a> </p>
       <p class= "office">Office Number: ${manager.officeNumber} </p>
       </div>
       </div>
