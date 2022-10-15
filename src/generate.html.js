@@ -48,3 +48,31 @@ const createIntern = function (intern) {
     `
 };
 
+generateHTML = (data) => {
+
+    staffArray = [];
+
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole();
+
+        if (role === 'Manager') {
+            const managerCard = createManager(employee);
+
+            staffArray.push(managerCard);
+        }
+
+        if (role === 'Engineer'){
+            const engineerCard = createEngineer(employee);
+
+            staffArray.push(internCard);
+        }
+    }
+    const employeeCards = staffArray.join('')
+
+    const generateTeam = generateTeamPage(employeeCards);
+    return generateTeam;
+
+}
+
+
