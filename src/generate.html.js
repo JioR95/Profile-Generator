@@ -1,10 +1,9 @@
 const createManager = function (manager) {
     return `
-    <div class= "col-4 mt-4">
-     <div class= "card h-100">
+      <div class= "col-4 mt-4"> <div class= "card h-100">
       <div class= "card-header">
-       <h2>${manager.name}</h2>
-       <h3>Manager</h3><i class="material-icons">supervisor_account</i>
+      <h2>${manager.name}</h2>
+      <h3>Manager</h3><i class="material-icons">supervisor_account</i>
       </div>
       <div class= "card-body">
       <p class= "id">ID: ${manager.id} </p>
@@ -15,3 +14,37 @@ const createManager = function (manager) {
       </div>
     `;
 }
+
+const createEngineer = function (engineer) {
+    return `
+    <div class= "col-4 mt-4"> <div class= "card h-100">
+    <div class= "card-header">
+    <h2>${engineer.name}</h2>
+    <h3>Engineer</h3><i class="material-icons">build</i>
+    </div>
+    <div class= "card-body">
+    <p class= "id">ID: ${engineer.id}</p>
+    <p class= "email">Email: <a href= "mailto${engineer.email}">${engineer.email}</a></p>
+    </div>
+    </div>
+    </div>
+    `
+}
+
+const createIntern = function (intern) {
+    return `
+    <div class="col-4 mt-4"> <div class= "card h-100>
+    <div class="card-header">
+    <h2>${intern.name}</h2>
+    <h3>Intern</h3><i class="material-icons">account_circle</i>
+    </div>
+    <div class= "card-body">
+    <p class= "id">ID: ${intern.id}</p>
+    <p class= "email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+    <p class= "school">School: ${intern.school}</p>
+    </div>
+    </div>
+    </div>
+    `
+};
+
