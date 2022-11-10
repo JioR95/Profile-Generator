@@ -9,7 +9,7 @@ const writeFile = require('./utils/write-file');
 
 const staffTeam = [];
 
-const managerPrompt = () => {
+const promptManager = () => {
     return inquirer.prompt([
     {
         type: 'input',
@@ -194,7 +194,7 @@ const promptNextStep = () => {
 };
 async function addTeam() {
     let isFinished = false;
-    let manager = await managerPrompt();
+    let manager = await promptManager();
     let newManager = new Manager(manager.name, manager.id, manager.email, manager.office);
     staffTeam.push(newManager);
 
